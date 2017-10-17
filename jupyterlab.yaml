@@ -1,0 +1,10 @@
+version: "3"
+services:
+        jupyterlab:
+                image: joshjob42/jupyterlab
+                ports:
+                        - "8888:8888"
+                volumes:
+                        - "${BASEDIR}:${BASEDIR}"
+                        - HOME:"${HOME}"
+                command: jupyter lab --port=8888 --allow-root --ip=* --no-browser

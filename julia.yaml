@@ -1,0 +1,8 @@
+version: "3"
+services:
+        jupyterlab:
+                image: joshjob42/jupyterlab
+                volumes:
+                        - "${BASEDIR}:${BASEDIR}"
+                        - HOME:"${HOME}"
+                command: run_julia ${PWD} "*"
