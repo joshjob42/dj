@@ -1,0 +1,3 @@
+#!/bin/bash
+basedir=$(dirname $HOME)
+docker run --rm -v $basedir:$basedir -e HOME=$HOME -it joshjob42/jupyterlab run_julia $(pwd) $*
