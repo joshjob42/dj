@@ -1,0 +1,6 @@
+#!/bin/bash
+ADDR=$(dig +short myip.opendns.com @resolver1.opendns.com)
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem -subj "/C=US/ST=Place/L=Here/O=Dis/CN=$ADDR"
+cp mykey.key $HOME/dj/jupyterlab/
+cp mycert.pem $HOME/dj/jupyterlab/
+docker build -t joshjob42/jupyerlab -f $HOME/dj/jupyterlab/Dockerfile $HOME/dj/jupyterlab --no-cache
