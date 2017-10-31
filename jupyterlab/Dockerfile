@@ -13,4 +13,5 @@ RUN apt-get install bash-completion
 RUN cd /
 ADD mykey.key /mykey.key
 ADD mycert.pem /mycert.pem
+RUN sudo apt-get install -yq libzmq-dev
 CMD jupyter lab --ip=* --port=8888 --no-browser --allow-root --certfile mycert.pem --keyfile mykey.key
