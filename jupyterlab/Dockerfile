@@ -13,4 +13,4 @@ RUN apt-get install bash-completion
 RUN cd /
 ADD mykey.key /mykey.key
 ADD mycert.pem /mycert.pem
-CMD jupyter lab --ip=* --port=8888 --no-browser --allow-root --certfile=/mycert.pem --keyfile=/mykey.key
+CMD jupyter lab --ip=* --port=8888 --no-browser --allow-root --certfile mycert.pem --keyfile mykey.key

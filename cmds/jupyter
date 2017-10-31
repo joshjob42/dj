@@ -1,4 +1,4 @@
 #!/bin/bash
 basedir=$(dirname $HOME)
-docker run --rm -v $basedir:$basedir -e HOME=$HOME -w $HOME -p 8888:8888 -it joshjob42/jupyterlab jupyter lab --port=8888 --allow-root --ip=* --no-browser --keyfile=mykey.key --certfile=mycert.pem
+docker run --rm -v $basedir:$basedir -e HOME=$HOME -w $HOME -p 8888:8888 -it joshjob42/jupyterlab jupyter lab --port=8888 --allow-root --ip=* --no-browser --keyfile=/mykey.key --certfile=/mycert.pem
 
